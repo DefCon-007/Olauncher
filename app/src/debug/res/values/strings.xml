@@ -1,0 +1,9 @@
+<resources>
+    <!--
+        Debug-only override. Debug builds use the applicationId app.olauncher.debug
+        and this distinct label so they can be installed and identified alongside
+        the official Olauncher. The release build keeps the name from the main
+        source set ("Olauncher").
+    -->
+    <string name="app_name" translatable="false">Olauncher Custom</string>
+</resources>
