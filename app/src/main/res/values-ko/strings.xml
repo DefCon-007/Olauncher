@@ -129,6 +129,9 @@
     <string name="cheers">건배!</string>
     <string name="notification_bar">알림 표시줄</string>
     <string name="private_space">개인 공간</string>
+    <string name="work_profile_tabs">직장 프로필 탭</string>
+    <string name="personal">개인</string>
+    <string name="work">직장</string>
     <string name="invalid_pin_request">잘못된 고정 요청</string>
     <string name="widgets_not_supported">위젯은 지원되지 않습니다</string>
     <string name="pin_action_not_supported">지원되지 않는 고정 작업입니다</string>

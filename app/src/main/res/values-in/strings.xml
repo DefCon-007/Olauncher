@@ -134,6 +134,9 @@
     <string name="cheers">Bersulang!</string>
     <string name="notification_bar">Bilah pemberitahuan</string>
     <string name="private_space">Ruang pribadi</string>
+    <string name="work_profile_tabs">Tab profil kerja</string>
+    <string name="personal">Pribadi</string>
+    <string name="work">Kerja</string>
     <string name="invalid_pin_request">Permintaan penyematan tidak valid</string>
     <string name="widgets_not_supported">Widget tidak didukung</string>
     <string name="pin_action_not_supported">Tindakan penyematan ini tidak didukung</string>

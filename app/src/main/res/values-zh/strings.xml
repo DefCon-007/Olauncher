@@ -135,6 +135,9 @@
     <string name="cheers">干杯!</string>
     <string name="notification_bar">通知栏</string>
     <string name="private_space">私密空间</string>
+    <string name="work_profile_tabs">工作资料标签</string>
+    <string name="personal">个人</string>
+    <string name="work">工作</string>
     <string name="invalid_pin_request">无效的固定请求</string>
     <string name="widgets_not_supported">不支持小部件</string>
     <string name="pin_action_not_supported">不支持此固定操作</string>

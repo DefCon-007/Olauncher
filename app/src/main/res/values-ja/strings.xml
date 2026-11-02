@@ -135,6 +135,9 @@
     <string name="cheers">乾杯!</string>
     <string name="notification_bar">通知バー</string>
     <string name="private_space">プライベート スペース</string>
+    <string name="work_profile_tabs">仕事用プロファイルのタブ</string>
+    <string name="personal">個人用</string>
+    <string name="work">仕事用</string>
     <string name="invalid_pin_request">無効な固定リクエストです</string>
     <string name="widgets_not_supported">ウィジェットはサポートされていません</string>
     <string name="pin_action_not_supported">この固定操作はサポートされていません</string>

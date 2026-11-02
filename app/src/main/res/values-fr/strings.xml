@@ -134,6 +134,9 @@
     <string name="cheers">Santé!</string>
     <string name="notification_bar">Barre de notifications</string>
     <string name="private_space">Espace privé</string>
+    <string name="work_profile_tabs">Onglets du profil professionnel</string>
+    <string name="personal">Personnel</string>
+    <string name="work">Professionnel</string>
     <string name="invalid_pin_request">Demande d\'épinglage non valide</string>
     <string name="widgets_not_supported">Les widgets ne sont pas pris en charge</string>
     <string name="pin_action_not_supported">Cette action d\'épinglage n\'est pas prise en charge</string>

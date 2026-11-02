@@ -135,6 +135,9 @@
     <string name="cheers">Будьмо!</string>
     <string name="notification_bar">Панель сповіщень</string>
     <string name="private_space">Приватний простір</string>
+    <string name="work_profile_tabs">Вкладки робочого профілю</string>
+    <string name="personal">Особисте</string>
+    <string name="work">Робота</string>
     <string name="invalid_pin_request">Недійсний запит на закріплення</string>
     <string name="widgets_not_supported">Віджети не підтримуються</string>
     <string name="pin_action_not_supported">Ця дія закріплення не підтримується</string>

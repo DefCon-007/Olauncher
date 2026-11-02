@@ -137,6 +137,9 @@
     <string name="cheers">Egészségére!</string>
     <string name="notification_bar">Értesítési sáv</string>
     <string name="private_space">Privát tér</string>
+    <string name="work_profile_tabs">Munkaprofil lapok</string>
+    <string name="personal">Személyes</string>
+    <string name="work">Munka</string>
     <string name="invalid_pin_request">Érvénytelen rögzítési kérelem</string>
     <string name="widgets_not_supported">A modulok nem támogatottak</string>
     <string name="pin_action_not_supported">Ez a rögzítési művelet nem támogatott</string>

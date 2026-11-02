@@ -130,6 +130,9 @@
     <string name="cheers">乾杯！</string>
     <string name="notification_bar">狀態列</string>
     <string name="private_space">私人空間</string>
+    <string name="work_profile_tabs">工作設定檔分頁</string>
+    <string name="personal">個人</string>
+    <string name="work">工作</string>
     <string name="invalid_pin_request">固定捷徑或小工具的要求無效</string>
     <string name="widgets_not_supported">不支援小工具</string>
     <string name="pin_action_not_supported">不支援這項固定操作</string>

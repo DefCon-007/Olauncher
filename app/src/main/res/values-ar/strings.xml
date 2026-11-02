@@ -133,6 +133,9 @@
     <string name="cheers">بصحتك!</string>
     <string name="notification_bar">شريط الإشعارات</string>
     <string name="private_space">المساحة الخاصة</string>
+    <string name="work_profile_tabs">علامات تبويب ملف العمل</string>
+    <string name="personal">شخصي</string>
+    <string name="work">العمل</string>
     <string name="invalid_pin_request">طلب تثبيت غير صالح</string>
     <string name="widgets_not_supported">التطبيقات المصغرة غير مدعومة</string>
     <string name="pin_action_not_supported">إجراء التثبيت هذا غير مدعوم</string>

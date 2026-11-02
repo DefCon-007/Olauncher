@@ -136,6 +136,9 @@
     <string name="cheers">Živjeli!</string>
     <string name="notification_bar">Traka obavijesti</string>
     <string name="private_space">Privatni prostor</string>
+    <string name="work_profile_tabs">Kartice radnog profila</string>
+    <string name="personal">Osobno</string>
+    <string name="work">Posao</string>
     <string name="invalid_pin_request">Nevažeći zahtjev za prikvačivanje</string>
     <string name="widgets_not_supported">Widgeti nisu podržani</string>
     <string name="pin_action_not_supported">Ova radnja prikvačivanja nije podržana</string>

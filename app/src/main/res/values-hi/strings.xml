@@ -138,6 +138,9 @@
     <string name="cheers">चियर्स!</string>
     <string name="notification_bar">नोटिफिकेशन बार</string>
     <string name="private_space">प्राइवेट स्पेस</string>
+    <string name="work_profile_tabs">वर्क प्रोफ़ाइल टैब</string>
+    <string name="personal">व्यक्तिगत</string>
+    <string name="work">कार्य</string>
     <string name="invalid_pin_request">अमान्य पिन अनुरोध</string>
     <string name="widgets_not_supported">विजेट समर्थित नहीं हैं</string>
     <string name="pin_action_not_supported">यह पिन क्रिया समर्थित नहीं है</string>

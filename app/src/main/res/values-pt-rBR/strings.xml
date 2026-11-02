@@ -136,6 +136,9 @@
     <string name="cheers">Saúde!</string>
     <string name="notification_bar">Barra de notificações</string>
     <string name="private_space">Espaço privado</string>
+    <string name="work_profile_tabs">Guias do perfil de trabalho</string>
+    <string name="personal">Pessoal</string>
+    <string name="work">Trabalho</string>
     <string name="invalid_pin_request">Solicitação de fixação inválida</string>
     <string name="widgets_not_supported">Widgets não são compatíveis</string>
     <string name="pin_action_not_supported">Esta ação de fixação não é compatível</string>

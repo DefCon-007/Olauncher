@@ -135,6 +135,9 @@
     <string name="cheers">Na zdrowie!</string>
     <string name="notification_bar">Pasek powiadomień</string>
     <string name="private_space">Przestrzeń prywatna</string>
+    <string name="work_profile_tabs">Karty profilu służbowego</string>
+    <string name="personal">Osobiste</string>
+    <string name="work">Praca</string>
     <string name="invalid_pin_request">Nieprawidłowe żądanie przypięcia</string>
     <string name="widgets_not_supported">Widżety nie są obsługiwane</string>
     <string name="pin_action_not_supported">Ta czynność przypinania nie jest obsługiwana</string>

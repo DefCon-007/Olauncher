@@ -136,6 +136,9 @@
     <string name="cheers">Skål!</string>
     <string name="notification_bar">Aviseringsfält</string>
     <string name="private_space">Privat rum</string>
+    <string name="work_profile_tabs">Flikar för arbetsprofil</string>
+    <string name="personal">Personligt</string>
+    <string name="work">Arbete</string>
     <string name="invalid_pin_request">Ogiltig begäran om att fästa</string>
     <string name="widgets_not_supported">Widgetar stöds inte</string>
     <string name="pin_action_not_supported">Den här fäståtgärden stöds inte</string>
