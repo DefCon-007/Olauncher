@@ -138,6 +138,9 @@
     <string name="cheers">Cạn ly!</string>
     <string name="notification_bar">Thanh thông báo</string>
     <string name="private_space">Không gian riêng tư</string>
+    <string name="work_profile_tabs">Thẻ hồ sơ công việc</string>
+    <string name="personal">Cá nhân</string>
+    <string name="work">Công việc</string>
     <string name="invalid_pin_request">Yêu cầu ghim không hợp lệ</string>
     <string name="widgets_not_supported">Không hỗ trợ widget</string>
     <string name="pin_action_not_supported">Thao tác ghim này không được hỗ trợ</string>

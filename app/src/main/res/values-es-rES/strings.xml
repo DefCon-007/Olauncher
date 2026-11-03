@@ -134,6 +134,9 @@
     <string name="cheers">¡Salud!</string>
     <string name="notification_bar">Barra de notificaciones</string>
     <string name="private_space">Espacio privado</string>
+    <string name="work_profile_tabs">Pestañas de perfil de trabajo</string>
+    <string name="personal">Personal</string>
+    <string name="work">Trabajo</string>
     <string name="invalid_pin_request">Solicitud de anclaje no válida</string>
     <string name="widgets_not_supported">Los widgets no son compatibles</string>
     <string name="pin_action_not_supported">Esta acción de anclaje no es compatible</string>

@@ -33,7 +33,10 @@ android {
         debug {
             debuggable true
             minifyEnabled false
+            // Installs as app.olauncher.debug so it can live alongside the
+            // official Olauncher (app.olauncher) on the same device.
             applicationIdSuffix ".debug"
+            versionNameSuffix "-custom"
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

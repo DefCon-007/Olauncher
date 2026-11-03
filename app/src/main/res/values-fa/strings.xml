@@ -139,6 +139,9 @@
     <string name="cheers">به سلامتی!</string>
     <string name="notification_bar">نوار اعلان‌ها</string>
     <string name="private_space">فضای خصوصی</string>
+    <string name="work_profile_tabs">زبانه‌های نمایه کاری</string>
+    <string name="personal">شخصی</string>
+    <string name="work">کاری</string>
     <string name="invalid_pin_request">درخواست سنجاق کردن نامعتبر است</string>
     <string name="widgets_not_supported">ابزارک‌ها پشتیبانی نمی‌شوند</string>
     <string name="pin_action_not_supported">این عملیات سنجاق کردن پشتیبانی نمی‌شود</string>

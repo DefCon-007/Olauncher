@@ -25,6 +25,8 @@ import app.olauncher.data.Constants
 import app.olauncher.data.Prefs
 import app.olauncher.databinding.FragmentAppDrawerBinding
 import app.olauncher.helper.deletePinnedShortcut
+import app.olauncher.helper.getColorFromAttr
+import app.olauncher.helper.getWorkProfileUserHandle
 import app.olauncher.helper.hideKeyboard
 import app.olauncher.helper.isEinkDisplay
 import app.olauncher.helper.isSystemAnimationsDisabled
@@ -35,6 +37,8 @@ import app.olauncher.helper.openUrl
 import app.olauncher.helper.showKeyboard
 import app.olauncher.helper.showToast
 import app.olauncher.helper.uninstall
+import app.olauncher.listener.OnSwipeTouchListener
+import android.view.MotionEvent
 
 class AppDrawerFragment : BaseFragment() {
 
@@ -50,6 +54,10 @@ class AppDrawerFragment : BaseFragment() {
     private var currentPrivateSpaceApps: List<AppModel>? = null
     private var currentPrivateSpaceLocked: Boolean = true
     private var currentPrivateSpaceAvailable: Boolean = false
+
+    // Work/personal profile tabs state
+    private var workProfileUser: android.os.UserHandle? = null
+    private var showWorkSelected = false
 
     private val viewModel: MainViewModel by activityViewModels()
     private var _binding: FragmentAppDrawerBinding? = null
@@ -75,8 +83,83 @@ class AppDrawerFragment : BaseFragment() {
         initViews()
         initSearch()
         initAdapter()
+        initTabs()
+        initSwipeGestures()
         initObservers()
         initClickListeners()
+    }
+
+    // Swipe left/right on the app list to switch between the Personal and Work tabs,
+    // mirroring the stock launcher. Attached as a RecyclerView item touch listener that
+    // only observes gestures (it never consumes them), so vertical list scrolling and the
+    // search view keep working. OnSwipeTouchListener already ignores vertical flings here
+    // and returns false from onFling, firing only the horizontal swipe callbacks.
+    private fun initSwipeGestures() {
+        if (!tabsEnabled()) return
+
+        val swipeListener = object : OnSwipeTouchListener(requireContext()) {
+            override fun onSwipeLeft() {
+                super.onSwipeLeft()
+                // Personal is on the left, Work on the right: swiping left advances to Work.
+                setWorkSelected(true)
+            }
+
+            override fun onSwipeRight() {
+                super.onSwipeRight()
+                // Swiping right returns to the Personal tab.
+                setWorkSelected(false)
+            }
+        }
+
+        binding.recyclerView.addOnItemTouchListener(object : RecyclerView.OnItemTouchListener {
+            override fun onInterceptTouchEvent(rv: RecyclerView, e: MotionEvent): Boolean {
+                // Feed the gesture detector without ever consuming the event, so the
+                // RecyclerView keeps receiving vertical scroll/touch events.
+                swipeListener.onTouch(rv, e)
+                return false
+            }
+
+            override fun onTouchEvent(rv: RecyclerView, e: MotionEvent) {}
+
+            override fun onRequestDisallowInterceptTouchEvent(disallowIntercept: Boolean) {}
+        })
+    }
+
+    private fun tabsEnabled(): Boolean =
+        flag == Constants.FLAG_LAUNCH_APP && prefs.showWorkTabs && workProfileUser != null
+
+    private fun initTabs() {
+        // Resolve the work profile once; tabs are only relevant when launching apps
+        workProfileUser = if (flag == Constants.FLAG_LAUNCH_APP)
+            getWorkProfileUserHandle(requireContext())
+        else null
+
+        if (!tabsEnabled()) {
+            binding.profileTabs.visibility = View.GONE
+            return
+        }
+
+        binding.profileTabs.visibility = View.VISIBLE
+        binding.tabPersonal.setOnClickListener { setWorkSelected(false) }
+        binding.tabWork.setOnClickListener { setWorkSelected(true) }
+        updateTabsUi()
+    }
+
+    // Single code path used by both the tab taps and the drawer swipe gestures.
+    private fun setWorkSelected(selectWork: Boolean) {
+        if (!tabsEnabled()) return
+        if (showWorkSelected == selectWork) return
+        showWorkSelected = selectWork
+        updateTabsUi()
+        updateCombinedAppList()
+    }
+
+    private fun updateTabsUi() {
+        if (!tabsEnabled()) return
+        val active = requireContext().getColorFromAttr(R.attr.primaryColor)
+        val inactive = requireContext().getColorFromAttr(R.attr.primaryColorTrans50)
+        binding.tabPersonal.setTextColor(if (showWorkSelected) inactive else active)
+        binding.tabWork.setTextColor(if (showWorkSelected) active else inactive)
     }
 
     private fun initViews() {
@@ -294,9 +377,22 @@ class AppDrawerFragment : BaseFragment() {
 
     private fun updateCombinedAppList() {
         val apps = currentAppList ?: return
-        val combined = apps.toMutableList()
 
-        if (flag == Constants.FLAG_LAUNCH_APP && currentPrivateSpaceAvailable) {
+        // When the work/personal tabs are active, show only the apps for the selected profile.
+        // The combined list already carries each app's UserHandle, so we partition by it.
+        val combined = if (tabsEnabled()) {
+            val work = workProfileUser
+            apps.filter { app ->
+                if (showWorkSelected) app.user == work else app.user == Process.myUserHandle()
+            }.toMutableList()
+        } else {
+            apps.toMutableList()
+        }
+
+        // Private Space apps are shown only on the personal tab (or when tabs are off)
+        if (flag == Constants.FLAG_LAUNCH_APP && currentPrivateSpaceAvailable
+            && (!tabsEnabled() || !showWorkSelected)
+        ) {
             combined.add(AppModel.PrivateSpaceHeader(isLocked = currentPrivateSpaceLocked))
             if (!currentPrivateSpaceLocked) {
                 currentPrivateSpaceApps?.let { combined.addAll(it) }

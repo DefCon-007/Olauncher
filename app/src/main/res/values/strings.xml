@@ -169,6 +169,9 @@
     <string name="cheers">Cheers!</string>
     <string name="notification_bar">Notification bar</string>
     <string name="private_space">Private space</string>
+    <string name="work_profile_tabs">Work profile tabs</string>
+    <string name="personal">Personal</string>
+    <string name="work">Work</string>
     <string name="invalid_pin_request">Invalid pin request</string>
     <string name="widgets_not_supported">Widgets are not supported</string>
     <string name="pin_action_not_supported">This pin action is not supported</string>

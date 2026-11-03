@@ -138,6 +138,9 @@
     <string name="cheers">Στην υγειά μας!</string>
     <string name="notification_bar">Γραμμή ειδοποιήσεων</string>
     <string name="private_space">Ιδιωτικός χώρος</string>
+    <string name="work_profile_tabs">Καρτέλες προφίλ εργασίας</string>
+    <string name="personal">Προσωπικά</string>
+    <string name="work">Εργασία</string>
     <string name="invalid_pin_request">Μη έγκυρο αίτημα καρφιτσώματος</string>
     <string name="widgets_not_supported">Τα widgets δεν υποστηρίζονται</string>
     <string name="pin_action_not_supported">Αυτή η ενέργεια καρφιτσώματος δεν υποστηρίζεται</string>

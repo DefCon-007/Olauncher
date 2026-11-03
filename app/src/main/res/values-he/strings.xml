@@ -128,6 +128,9 @@
     <string name="pro_message">ל־Olauncher יש גם גרסת Pro בשם Pro Launcher. יש בה תכונות נוספות כמו מזג אוויר, ווידג\'טים, גופנים, תיקיות, טפטים ל־AMOLED ועוד.\n\nזו גם הדרך הטובה ביותר לתמוך במפתחי Olauncher. כדאי לבדוק!</string>
     <string name="notification_bar">שורת ההתראות</string>
     <string name="private_space">מרחב פרטי</string>
+    <string name="work_profile_tabs">כרטיסיות פרופיל עבודה</string>
+    <string name="personal">אישי</string>
+    <string name="work">עבודה</string>
     <string name="invalid_pin_request">בקשת הצמדה לא חוקית</string>
     <string name="widgets_not_supported">אין תמיכה בווידג\'טים</string>
     <string name="pin_action_not_supported">פעולת הצמדה זו אינה נתמכת</string>

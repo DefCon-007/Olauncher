@@ -137,6 +137,9 @@
     <string name="cheers">Skål!</string>
     <string name="notification_bar">Varslingslinje</string>
     <string name="private_space">Privat område</string>
+    <string name="work_profile_tabs">Faner for arbeidsprofil</string>
+    <string name="personal">Personlig</string>
+    <string name="work">Arbeid</string>
     <string name="invalid_pin_request">Ugyldig festeforespørsel</string>
     <string name="widgets_not_supported">Widgeter støttes ikke</string>
     <string name="pin_action_not_supported">Denne festehandlingen støttes ikke</string>

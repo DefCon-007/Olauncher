@@ -137,6 +137,9 @@
     <string name="cheers">Kippis!</string>
     <string name="notification_bar">Ilmoituspalkki</string>
     <string name="private_space">Yksityinen tila</string>
+    <string name="work_profile_tabs">Työprofiilin välilehdet</string>
+    <string name="personal">Henkilökohtainen</string>
+    <string name="work">Työ</string>
     <string name="invalid_pin_request">Virheellinen kiinnityspyyntö</string>
     <string name="widgets_not_supported">Widgetejä ei tueta</string>
     <string name="pin_action_not_supported">Tätä kiinnitystoimintoa ei tueta</string>

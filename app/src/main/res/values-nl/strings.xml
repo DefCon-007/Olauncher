@@ -137,6 +137,9 @@
     <string name="cheers">Proost!</string>
     <string name="notification_bar">Meldingenbalk</string>
     <string name="private_space">Privéruimte</string>
+    <string name="work_profile_tabs">Tabbladen voor werkprofiel</string>
+    <string name="personal">Persoonlijk</string>
+    <string name="work">Werk</string>
     <string name="invalid_pin_request">Ongeldig vastzetverzoek</string>
     <string name="widgets_not_supported">Widgets worden niet ondersteund</string>
     <string name="pin_action_not_supported">Deze vastzetactie wordt niet ondersteund</string>

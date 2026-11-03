@@ -30,6 +30,7 @@ import app.olauncher.databinding.FragmentSettingsBinding
 import app.olauncher.helper.appUsagePermissionGranted
 import app.olauncher.helper.createDialog
 import app.olauncher.helper.getColorFromAttr
+import app.olauncher.helper.hasWorkProfile
 import app.olauncher.helper.hideStatusBar
 import app.olauncher.helper.isAccessServiceEnabled
 import app.olauncher.helper.isDarkThemeOn
@@ -89,6 +90,7 @@ class SettingsFragment : BaseFragment(), View.OnClickListener, View.OnLongClickL
         populateBoldFont()
         populateAlignment()
         populateStatusBar()
+        populateWorkTabs()
         populateDateTime()
         populateSwipeApps()
         populateActionHints()
@@ -115,6 +117,7 @@ class SettingsFragment : BaseFragment(), View.OnClickListener, View.OnLongClickL
             R.id.dailyWallpaper -> toggleDailyWallpaperUpdate()
             R.id.alignment -> showAlignmentMenu(view)
             R.id.statusBar -> toggleStatusBar()
+            R.id.workTabs -> toggleWorkTabs()
             R.id.dateTime -> showDateTimeMenu(view)
             R.id.appThemeText -> showAppThemeMenu(view, showSystem = false)
             R.id.textSizeValue -> showTextSizeDialog()
@@ -178,6 +181,7 @@ class SettingsFragment : BaseFragment(), View.OnClickListener, View.OnLongClickL
         binding.dailyWallpaper.setOnClickListener(this)
         binding.alignment.setOnClickListener(this)
         binding.statusBar.setOnClickListener(this)
+        binding.workTabs.setOnClickListener(this)
         binding.dateTime.setOnClickListener(this)
         binding.swipeLeftApp.setOnClickListener(this)
         binding.swipeRightApp.setOnClickListener(this)
@@ -343,6 +347,17 @@ class SettingsFragment : BaseFragment(), View.OnClickListener, View.OnLongClickL
             requireActivity().window.hideStatusBar()
             binding.statusBar.text = getString(R.string.off)
         }
+    }
+
+    private fun toggleWorkTabs() {
+        prefs.showWorkTabs = !prefs.showWorkTabs
+        populateWorkTabs()
+    }
+
+    private fun populateWorkTabs() {
+        // Only offer the toggle when a work profile actually exists on the device
+        binding.workTabsLayout.visibility = if (hasWorkProfile(requireContext())) View.VISIBLE else View.GONE
+        binding.workTabs.text = getString(if (prefs.showWorkTabs) R.string.on else R.string.off)
     }
 
     private fun toggleDateTime(selected: Int) {

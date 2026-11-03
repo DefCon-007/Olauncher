@@ -138,6 +138,9 @@
     <string name="cheers">ชนแก้ว!</string>
     <string name="notification_bar">แถบการแจ้งเตือน</string>
     <string name="private_space">พื้นที่ส่วนตัว</string>
+    <string name="work_profile_tabs">แท็บโปรไฟล์งาน</string>
+    <string name="personal">ส่วนตัว</string>
+    <string name="work">งาน</string>
     <string name="invalid_pin_request">คำขอปักหมุดไม่ถูกต้อง</string>
     <string name="widgets_not_supported">ไม่รองรับวิดเจ็ต</string>
     <string name="pin_action_not_supported">ไม่รองรับการปักหมุดนี้</string>

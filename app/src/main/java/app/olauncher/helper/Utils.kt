@@ -238,6 +238,23 @@ fun getPrivateSpaceUserHandle(context: Context): UserHandle? {
     return null
 }
 
+// A managed (work) profile is any additional user profile that is not the
+// personal (owner) profile and not a Private Space profile.
+fun getWorkProfileUserHandle(context: Context): UserHandle? {
+    return try {
+        val userManager = context.getSystemService(Context.USER_SERVICE) as UserManager
+        val myUserHandle = android.os.Process.myUserHandle()
+        userManager.userProfiles.firstOrNull { profile ->
+            profile != myUserHandle && !isPrivateSpaceProfile(context, profile)
+        }
+    } catch (e: Exception) {
+        e.printStackTrace()
+        null
+    }
+}
+
+fun hasWorkProfile(context: Context): Boolean = getWorkProfileUserHandle(context) != null
+
 suspend fun getPrivateSpaceApps(
     context: Context,
     prefs: Prefs,

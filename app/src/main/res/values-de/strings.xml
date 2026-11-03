@@ -134,6 +134,9 @@
     <string name="cheers">Prost!</string>
     <string name="notification_bar">Benachrichtigungsleiste</string>
     <string name="private_space">Privater Bereich</string>
+    <string name="work_profile_tabs">Tabs für Arbeitsprofil</string>
+    <string name="personal">Persönlich</string>
+    <string name="work">Arbeit</string>
     <string name="invalid_pin_request">Ungültige Anheftanfrage</string>
     <string name="widgets_not_supported">Widgets werden nicht unterstützt</string>
     <string name="pin_action_not_supported">Diese Anheftaktion wird nicht unterstützt</string>

@@ -135,6 +135,9 @@
     <string name="cheers">Ваше здоровье!</string>
     <string name="notification_bar">Панель уведомлений</string>
     <string name="private_space">Личное пространство</string>
+    <string name="work_profile_tabs">Вкладки рабочего профиля</string>
+    <string name="personal">Личное</string>
+    <string name="work">Работа</string>
     <string name="invalid_pin_request">Недопустимый запрос на закрепление</string>
     <string name="widgets_not_supported">Виджеты не поддерживаются</string>
     <string name="pin_action_not_supported">Это действие закрепления не поддерживается</string>

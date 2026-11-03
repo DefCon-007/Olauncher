@@ -134,6 +134,9 @@
     <string name="cheers">Salute!</string>
     <string name="notification_bar">Barra delle notifiche</string>
     <string name="private_space">Spazio privato</string>
+    <string name="work_profile_tabs">Schede profilo di lavoro</string>
+    <string name="personal">Personale</string>
+    <string name="work">Lavoro</string>
     <string name="invalid_pin_request">Richiesta di aggiunta non valida</string>
     <string name="widgets_not_supported">I widget non sono supportati</string>
     <string name="pin_action_not_supported">Questa azione di aggiunta non è supportata</string>

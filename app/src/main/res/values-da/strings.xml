@@ -137,6 +137,9 @@
     <string name="cheers">Skål!</string>
     <string name="notification_bar">Notifikationsbjælke</string>
     <string name="private_space">Privat område</string>
+    <string name="work_profile_tabs">Faner for arbejdsprofil</string>
+    <string name="personal">Personlig</string>
+    <string name="work">Arbejde</string>
     <string name="invalid_pin_request">Ugyldig fastgørelsesanmodning</string>
     <string name="widgets_not_supported">Widgets understøttes ikke</string>
     <string name="pin_action_not_supported">Denne fastgørelseshandling understøttes ikke</string>

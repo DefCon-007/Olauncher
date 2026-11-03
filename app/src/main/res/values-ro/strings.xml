@@ -138,6 +138,9 @@
     <string name="cheers">Noroc!</string>
     <string name="notification_bar">Bară de notificări</string>
     <string name="private_space">Spațiu privat</string>
+    <string name="work_profile_tabs">File profil de serviciu</string>
+    <string name="personal">Personal</string>
+    <string name="work">Serviciu</string>
     <string name="invalid_pin_request">Cerere de fixare nevalidă</string>
     <string name="widgets_not_supported">Widgeturile nu sunt acceptate</string>
     <string name="pin_action_not_supported">Această acțiune de fixare nu este acceptată</string>

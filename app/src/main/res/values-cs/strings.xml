@@ -138,6 +138,9 @@
     <string name="cheers">Na zdraví!</string>
     <string name="notification_bar">Panel oznámení</string>
     <string name="private_space">Soukromý prostor</string>
+    <string name="work_profile_tabs">Karty pracovního profilu</string>
+    <string name="personal">Osobní</string>
+    <string name="work">Práce</string>
     <string name="invalid_pin_request">Neplatný požadavek na připnutí</string>
     <string name="widgets_not_supported">Widgety nejsou podporovány</string>
     <string name="pin_action_not_supported">Tato akce připnutí není podporována</string>
