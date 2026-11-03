@@ -37,6 +37,8 @@ import app.olauncher.helper.openUrl
 import app.olauncher.helper.showKeyboard
 import app.olauncher.helper.showToast
 import app.olauncher.helper.uninstall
+import app.olauncher.listener.OnSwipeTouchListener
+import android.view.MotionEvent
 
 class AppDrawerFragment : BaseFragment() {
 
@@ -82,8 +84,45 @@ class AppDrawerFragment : BaseFragment() {
         initSearch()
         initAdapter()
         initTabs()
+        initSwipeGestures()
         initObservers()
         initClickListeners()
+    }
+
+    // Swipe left/right on the app list to switch between the Personal and Work tabs,
+    // mirroring the stock launcher. Attached as a RecyclerView item touch listener that
+    // only observes gestures (it never consumes them), so vertical list scrolling and the
+    // search view keep working. OnSwipeTouchListener already ignores vertical flings here
+    // and returns false from onFling, firing only the horizontal swipe callbacks.
+    private fun initSwipeGestures() {
+        if (!tabsEnabled()) return
+
+        val swipeListener = object : OnSwipeTouchListener(requireContext()) {
+            override fun onSwipeLeft() {
+                super.onSwipeLeft()
+                // Personal is on the left, Work on the right: swiping left advances to Work.
+                setWorkSelected(true)
+            }
+
+            override fun onSwipeRight() {
+                super.onSwipeRight()
+                // Swiping right returns to the Personal tab.
+                setWorkSelected(false)
+            }
+        }
+
+        binding.recyclerView.addOnItemTouchListener(object : RecyclerView.OnItemTouchListener {
+            override fun onInterceptTouchEvent(rv: RecyclerView, e: MotionEvent): Boolean {
+                // Feed the gesture detector without ever consuming the event, so the
+                // RecyclerView keeps receiving vertical scroll/touch events.
+                swipeListener.onTouch(rv, e)
+                return false
+            }
+
+            override fun onTouchEvent(rv: RecyclerView, e: MotionEvent) {}
+
+            override fun onRequestDisallowInterceptTouchEvent(disallowIntercept: Boolean) {}
+        })
     }
 
     private fun tabsEnabled(): Boolean =
@@ -101,21 +140,18 @@ class AppDrawerFragment : BaseFragment() {
         }
 
         binding.profileTabs.visibility = View.VISIBLE
-        binding.tabPersonal.setOnClickListener {
-            if (showWorkSelected) {
-                showWorkSelected = false
-                updateTabsUi()
-                updateCombinedAppList()
-            }
-        }
-        binding.tabWork.setOnClickListener {
-            if (!showWorkSelected) {
-                showWorkSelected = true
-                updateTabsUi()
-                updateCombinedAppList()
-            }
-        }
+        binding.tabPersonal.setOnClickListener { setWorkSelected(false) }
+        binding.tabWork.setOnClickListener { setWorkSelected(true) }
         updateTabsUi()
+    }
+
+    // Single code path used by both the tab taps and the drawer swipe gestures.
+    private fun setWorkSelected(selectWork: Boolean) {
+        if (!tabsEnabled()) return
+        if (showWorkSelected == selectWork) return
+        showWorkSelected = selectWork
+        updateTabsUi()
+        updateCombinedAppList()
     }
 
     private fun updateTabsUi() {
